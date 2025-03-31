@@ -21,7 +21,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 
 class freiburgDataset(BaseStereoViewDataset):
-    def __init__(self, *args, ROOT,method , **kwargs):
+    def __init__(self, *args, ROOT, method= None , **kwargs):
         self.ROOT = ROOT
         self.method = method 
         super().__init__(*args, **kwargs)
