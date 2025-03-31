@@ -88,11 +88,9 @@ def preprocess_ir_rgb(img_rgb,img_ir):
     # Crop based on valid columns
     left, right = valid_cols[0], valid_cols[-1]
     img_ir_cropped = img_ir.crop((left, 0, right, img_ir.height))
-    img_cropped = img_rgb.crop((left, 0, right, img_rgb.height))
 
     # Resize to match RGB image dimensions
     img_ir_resized = img_ir_cropped.resize(img_rgb.size)
-    img_rgb = img_cropped.resize(img_rgb.size)
 
     # Apply CLAHE (Adaptive Histogram Equalization)
     clahe = cv2.createCLAHE(clipLimit=10.0, tileGridSize=(8, 8))
